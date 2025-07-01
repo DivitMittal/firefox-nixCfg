@@ -1,4 +1,8 @@
-{config, ...}: {
+{
+  config,
+  lib,
+  ...
+}: let
   policies = {
     AppAutoUpdate = false; # Disable automatic application update
     BackgroundAppUpdate = false; # Disable automatic application update in the background, when the application is not running.
@@ -25,5 +29,13 @@
     ExtensionUpdate = false;
     DefaultDownloadDirectory = "${config.home.homeDirectory}/Downloads";
     PromptForDownloadLocation = true;
+  };
+  inherit (lib) mkIf;
+  cfg = config.programs.firefox-nixCfg;
+in {
+  config = mkIf cfg.enable {
+    programs.firefox = {
+      inherit policies;
+    };
   };
 }

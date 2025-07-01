@@ -1,5 +1,5 @@
 {
-  inputs,
+  moduleInputs,
   currentProfileDir,
   config,
   lib,
@@ -10,7 +10,7 @@
 in {
   config = mkIf cfg.enable {
     home.file."${currentProfileDir}/chrome/CSS/fx-csshacks" = {
-      source = inputs.fx-csshacks;
+      source = moduleInputs.fx-csshacks;
       recursive = true;
     };
 

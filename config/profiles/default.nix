@@ -2,7 +2,6 @@
   pkgs,
   config,
   lib,
-  inputs,
   ...
 }: let
   profilesDir =
@@ -202,15 +201,14 @@
   cfg = config.programs.firefox-nixCfg;
   inherit (lib) mkIf;
 in {
-  imports = [
-    inputs.betterfox-nix.homeManagerModules.betterfox
-    ./chrome
-  ];
+  imports = [./chrome];
   config = mkIf cfg.enable {
     _module.args = {
       inherit currentProfileDir;
     };
-    programs.firefox.betterfox.enable = true;
-    programs.firefox.profiles = profiles;
+    programs.firefox = {
+      betterfox.enable = true;
+      inherit profiles;
+    };
   };
 }
