@@ -3,7 +3,7 @@
 /* ---------------------------- Styling ------------------------------- */
 #urlbar-container {
   font-family: "CaskaydiaCove Nerd Font Mono";
-  font-size: 14px;
+  font-size: 12px;
 }
 
 #urlbar {
@@ -28,8 +28,7 @@
 #urlbar-go-button,
 #star-button,
 #star-button-box,
-#pocket-button,
-#tracking-protection-icon-container {
+#pocket-button {
   display: none !important;
 }
 
