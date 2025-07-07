@@ -20,17 +20,17 @@
 
 ---
 
-This Nix flake provides a highly customized and declarative Firefox configuration, managed through a [home-manager](https://github.com/nix-community/home-manager) module. It focuses on delivering a superior browsing experience by integrating performance enhancements, UI/UX improvements, and automation scripts.
+This Nix flake-based configuration provides a highly customized and declarative Firefox configuration, managed through a [home-manager](https://github.com/nix-community/home-manager) module. It focuses on delivering a superior browsing experience by integrating performance enhancements, UI/UX improvements, and automation scripts.
 
 ## ✨ Features
 
 ### 🚀 Performance & Security (Betterfox)
 
-The configuration incorporates hardened user preferences inspired by projects like [Betterfox](https://github.com/yokoffing/Betterfox). These settings are applied automatically via `autoconfig` scripts to enhance browsing speed, reduce memory usage, and improve security and privacy by default.
+The configuration incorporates hardened user preferences from [Betterfox](https://github.com/yokoffing/Betterfox), deployed via [betterfox-nix](https://github.com/HeitorAugustoLN/betterfox-nix). This generates a comprehensive `user.js` file within the Firefox profile, responsible for enhancing performance, removing distracting UI elements, and strengthening security and privacy.
 
 ### 🎨 UI/UX & CSS Hacks
 
-The user interface is heavily customized to be minimal, clean, and efficient.
+The user interface is heavily customized to be minimal, clean, & efficient, largely based on styles from [MrOtherGuy/firefox-csshacks](https.github.com/MrOtherGuy/firefox-csshacks).
 
 - **Minimalist Design:** The tab bar is hidden, and the URL bar is streamlined for a distraction-free look.
 - **Custom Styles:** Additional CSS tweaks are applied to refine margins and element spacing for a polished feel.
@@ -39,11 +39,15 @@ The user interface is heavily customized to be minimal, clean, and efficient.
 _Placeholder for UI/UX Screenshot:_
 `![Custom Firefox UI](path/to/your/screenshot.png)`
 
-### 🤖 Automation & Sidebery
+### 🤖 Automation
 
-Advanced functionality is added via JavaScript user scripts (`*.uc.js`), enabling powerful UI automation.
+This module leverages [MrOtherGuy/fx-autoconfig](https://github.com/MrOtherGuy/fx-autoconfig) to automatically load custom user scripts (`*.uc.js`) and CSS at startup. While `fx-autoconfig` normally requires a manual, procedural setup, this module packages it into a declarative, Nix-based configuration, simplifying management and ensuring reproducibility.
 
-- **Collapsible Sidebery:** The [Sidebery](https://addons.mozilla.org/en-US/firefox/addon/sidebery/) extension's sidebar can be automatically collapsed and expanded on hover, maximizing screen real estate without sacrificing functionality.
+### ✨ Sidebery Integration
+
+Advanced functionality is added via JavaScript user scripts (`*.uc.js`), enabling powerful UI automation for the [Sidebery](https://addons.mozilla.org/en-US/firefox/addon/sidebery/) extension.
+
+- **Collapsible Sidebar:** The sidebar can be automatically collapsed and expanded on hover or by holding the `Ctrl` key, maximizing screen real estate without sacrificing functionality.
 
 _Placeholder for Sidebery Automation GIF:_
 `![Sidebery Automation GIF](path/to/your/automation.gif)`
@@ -57,7 +61,7 @@ For keyboard-driven power users, the configuration includes a custom theme and s
 To use this module in your own configuration, add it to your `flake.nix` inputs:
 
 ```nix
-# flake.nix
+## flake.nix
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -69,10 +73,10 @@ To use this module in your own configuration, add it to your `flake.nix` inputs:
     homeConfigurations.your-user = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux; # Or your system
       modules = [
-        # Import the module
-        (firefox-nixCfg.homeManagerModules.firefox-nixCfg firefox-nixCfg.inputs)
+        ## Import the module
+        firefox-nixCfg.homeManagerModules.default
 
-        # Your other modules
+        ## Your other modules
         ./home.nix
       ];
     };
@@ -83,12 +87,16 @@ To use this module in your own configuration, add it to your `flake.nix` inputs:
 Then, enable it in your `home.nix`:
 
 ```nix
-# home.nix
+## home.nix
 {
   programs.firefox-nixCfg = {
     enable = true;
-    # Optionally enable Tridactyl support
+    ## Optionally enable Tridactyl support
     enableTridactyl = true;
+    ## Optionally specify a custom Firefox package
+    package = pkgs.firefox-bin;
   };
 }
 ```
+
+**macOS Support:** For macOS, this module defaults to using a pre-built Firefox binary from the [nixpkgs-firefox-darwin](https://github.com/bandithedoge/nixpkgs-firefox-darwin) overlay, ensuring a native and optimized experience.
