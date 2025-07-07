@@ -47,8 +47,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs-firefox-darwin = {
-      #url = "github:bandithedoge/nixpkgs-firefox-darwin";
-      url = "github:DivitMittal/nixpkgs-firefox-darwin/extra-files";
+      url = "github:bandithedoge/nixpkgs-firefox-darwin";
+      #url = "github:DivitMittal/nixpkgs-firefox-darwin/extra-files";
       #url = "path:/Users/div/Projects/Forks/nixpkgs-firefox-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };

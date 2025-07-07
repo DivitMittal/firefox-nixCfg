@@ -192,16 +192,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1751318125,
-        "narHash": "sha256-kfEQI/95PWGeqgzW5+k49NnOZ1WVDOgEoHFA1/YRFPU=",
-        "owner": "DivitMittal",
+        "lastModified": 1751764464,
+        "narHash": "sha256-Y5BHN4phP6UntfFpsC8OaBe2/Wy6fgZoVNOB9Ui4M+8=",
+        "owner": "bandithedoge",
         "repo": "nixpkgs-firefox-darwin",
-        "rev": "acbbaf324632ea86f8027e18dac2782ccf433870",
+        "rev": "54e7e7edfe9406e7ee4426a88c41d235c82cd5eb",
         "type": "github"
       },
       "original": {
-        "owner": "DivitMittal",
-        "ref": "extra-files",
+        "owner": "bandithedoge",
         "repo": "nixpkgs-firefox-darwin",
         "type": "github"
       }
