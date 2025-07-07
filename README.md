@@ -36,8 +36,7 @@ The user interface is heavily customized to be minimal, clean, & efficient, larg
 - **Custom Styles:** Additional CSS tweaks are applied to refine margins and element spacing for a polished feel.
 - **Declarative Theming:** All `userChrome.css` and `userContent.css` files are managed directly by Nix.
 
-_Placeholder for UI/UX Screenshot:_
-`![Custom Firefox UI](path/to/your/screenshot.png)`
+![Custom Firefox UI](assets/ui.png)
 
 ### 🤖 Automation
 
@@ -49,12 +48,13 @@ Advanced functionality is added via JavaScript user scripts (`*.uc.js`), enablin
 
 - **Collapsible Sidebar:** The sidebar can be automatically collapsed and expanded on hover or by holding the `Ctrl` key, maximizing screen real estate without sacrificing functionality.
 
-_Placeholder for Sidebery Automation GIF:_
-`![Sidebery Automation GIF](path/to/your/automation.gif)`
+![Sidebery Automation GIF](assets/sidebar.gif)
 
 ### ⌨️ Tridactyl Integration
 
 For keyboard-driven power users, the configuration includes a custom theme and setup for the [Tridactyl](https://github.com/tridactyl/tridactyl) extension, providing a seamless Vim-like browsing experience.
+
+![Tridactyl Theme GIF](assets/tridactyl.gif)
 
 ## Flakes Usage
 
