@@ -189,7 +189,9 @@
         };
       };
 
-      # settings = builtins.import ./user_settings.nix;
+      settings = {
+        "browser.urlbar.scotchBonnet.enableOverride" = false;
+      };
       betterfox = {
         enable = true;
         enableAllSections = true;
