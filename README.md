@@ -15,7 +15,8 @@
 ---
 
 <div align='center'>
-    <img src="https://github.com/DivitMittal/firefox-nixCfg/actions/workflows/.github/workflows/flake-check.yml/badge.svg" alt="nix-flake-check"/>
+    <a href="https://github.com/DivitMittal/firefox-nixCfg/actions/workflows/flake-check.yml"><img src="https://github.com/DivitMittal/firefox-nixCfg/actions/workflows/flake-check.yml/badge.svg" alt="nix-flake-check"/></a>
+    <a href="https://github.com/DivitMittal/firefox-nixCfg/actions/workflows/flake-lock-update.yml"><img src="https://github.com/DivitMittal/firefox-nixCfg/actions/workflows/flake-lock-update.yml/badge.svg" alt="flake-lock-update"/></a>
 </div>
 
 ---
