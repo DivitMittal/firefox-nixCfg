@@ -1,0 +1,23 @@
+jobs:
+  locking-flake:
+    permissions:
+      contents: write
+      id-token: write
+      issues: write
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@main
+      with:
+        fetch-depth: 1
+    - uses: DeterminateSystems/nix-installer-action@v17
+    - name: Magic Nix Cache(Use GitHub Actions Cache)
+      uses: DeterminateSystems/magic-nix-cache-action@main
+    - name: Update flake.lock
+      uses: DeterminateSystems/update-flake-lock@main
+    timeout-minutes: 30
+'on':
+  schedule:
+  - cron: 0 0 * * 0
+  workflow_dispatch: {}
