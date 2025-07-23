@@ -19,25 +19,19 @@ jobs:
   pull_request:
     branches:
     - main
-    paths-ignore:
-    - '**/*.md'
-    - '**/*.adoc'
-    - '**/*.jpeg'
-    - '**/*.jpg'
-    - '**/*.png'
-    - '**/*.svg'
-    - .github/**
-    - .git*
+    paths:
+    - flake.nix
+    - flake.lock
+    - flake/**
+    - modules/**
+    - config/**
   push:
     branches:
     - main
-    paths-ignore:
-    - '**/*.md'
-    - '**/*.adoc'
-    - '**/*.jpeg'
-    - '**/*.jpg'
-    - '**/*.png'
-    - '**/*.svg'
-    - .github/**
-    - .git*
+    paths:
+    - flake.nix
+    - flake.lock
+    - flake/**
+    - modules/**
+    - config/**
   workflow_dispatch: {}
