@@ -5,18 +5,16 @@
 }: let
   policies = {
     AppAutoUpdate = false; # Disable automatic application update
-    BackgroundAppUpdate = false; # Disable automatic application update in the background, when the application is not running.
-
-    DisableBuiltinPDFViewer = false;
-    DisableFirefoxAccounts = false; # Enable Firefox Sync
-
+    BackgroundAppUpdate = false; # Disable automatic application update in the background, when the application is not running. (Windows only)
+    ManualAppUpdateOnly = true; # No update prompts
+    AutofillAddressEnabled = false; # Disable address autofill
+    AutofillCreditCardEnabled = false; # Disable credit card autofill
+    OfferToSaveLogins = false;
+    OfferToSaveLoginsDefault = false;
     DisableFirefoxStudies = true;
     DisableTelemetry = true;
-
     DisablePocket = true;
-
     DontCheckDefaultBrowser = true;
-    OfferToSaveLogins = false; # Managed by bitwarden
 
     EnableTrackingProtection = {
       Value = true;
@@ -26,7 +24,6 @@
       EmailTracking = true;
       # Exceptions = ["https://example.com"]
     };
-    ExtensionUpdate = false;
     DefaultDownloadDirectory = "${config.home.homeDirectory}/Downloads";
     PromptForDownloadLocation = true;
   };
