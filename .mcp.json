@@ -1,0 +1,26 @@
+{
+  "mcpServers": {
+    "serena": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/oraios/serena",
+        "serena",
+        "start-mcp-server",
+        "--context",
+        "ide-assistant",
+        "--project",
+        "~/Projects/firefox-nixCfg/"
+      ],
+      "env": {}
+    },
+    "nixos": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["mcp-nixos"],
+      "env": {}
+    }
+  }
+}
+
