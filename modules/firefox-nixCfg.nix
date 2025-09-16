@@ -13,7 +13,7 @@ moduleInputs: {
 in {
   imports = [
     ../config
-    moduleInputs.betterfox-nix.homeManagerModules.betterfox
+    moduleInputs.betterfox-nix.modules.homeManager.betterfox
   ];
   options = let
     inherit (lib) mkEnableOption mkOption types;

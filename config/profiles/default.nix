@@ -192,10 +192,6 @@
       settings = {
         "browser.urlbar.scotchBonnet.enableOverride" = false;
       };
-      betterfox = {
-        enable = true;
-        enableAllSections = true;
-      };
       userContent = lib.strings.readFile ./chrome/userContent.css;
       userChrome = lib.strings.readFile ./chrome/userChrome.css;
     };
@@ -209,7 +205,10 @@ in {
       inherit currentProfileDir;
     };
     programs.firefox = {
-      betterfox.enable = true;
+      betterfox = {
+        enable = true;
+        profiles.custom-default.enableAllSections = true;
+      };
       inherit profiles;
     };
   };
