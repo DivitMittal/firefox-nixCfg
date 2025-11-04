@@ -186,6 +186,25 @@
             ];
             definedAliases = ["@hm"];
           };
+
+          "Ultimate Guitar" = {
+            urls = [
+              {
+                template = "https://www.ultimate-guitar.com/search.php";
+                params = [
+                  {
+                    name = "search_type";
+                    value = "title";
+                  }
+                  {
+                    name = "value";
+                    value = "{searchTerms}";
+                  }
+                ];
+              }
+            ];
+            definedAliases = ["@ug"];
+          };
         };
       };
 
