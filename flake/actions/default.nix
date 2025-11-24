@@ -34,6 +34,7 @@
         uses = "actions/checkout@main";
         "with" = {
           fetch-depth = 1;
+          persist-credentials = false;
         };
       }
       inputs.actions-nix.lib.steps.DeterminateSystemsNixInstallerAction
