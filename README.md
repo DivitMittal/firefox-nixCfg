@@ -27,13 +27,13 @@
 
 This Nix flake-based configuration provides a highly customized and declarative Firefox configuration, managed through a [home-manager](https://github.com/nix-community/home-manager) module. It focuses on delivering a superior browsing experience by integrating performance enhancements, UI/UX improvements, and automation scripts.
 
-## ✨ Features
+## Features
 
-### 🚀 Performance & Security (Betterfox)
+### Performance & Security (Betterfox)
 
 The configuration incorporates hardened user preferences from [Betterfox](https://github.com/yokoffing/Betterfox), deployed via [betterfox-nix](https://github.com/HeitorAugustoLN/betterfox-nix). This generates a comprehensive `user.js` file within the Firefox profile, responsible for enhancing performance, removing distracting UI elements, and strengthening security and privacy.
 
-### 🎨 UI/UX & CSS Hacks
+### UI/UX & CSS Hacks
 
 The user interface is heavily customized to be minimal, clean, & efficient, largely based on styles from [MrOtherGuy/firefox-csshacks](https.github.com/MrOtherGuy/firefox-csshacks).
 
@@ -43,11 +43,11 @@ The user interface is heavily customized to be minimal, clean, & efficient, larg
 
 ![Custom Firefox UI](assets/ui.png)
 
-### 🤖 Automation
+### Automation
 
 This module leverages [MrOtherGuy/fx-autoconfig](https://github.com/MrOtherGuy/fx-autoconfig) to automatically load custom user scripts (`*.uc.js`) and CSS at startup. While `fx-autoconfig` normally requires a manual, procedural setup, this module packages it into a declarative, Nix-based configuration, simplifying management and ensuring reproducibility.
 
-### ✨ Sidebery Integration
+### Sidebery Integration
 
 Advanced functionality is added via JavaScript user scripts (`*.uc.js`), enabling powerful UI automation for the [Sidebery](https://addons.mozilla.org/en-US/firefox/addon/sidebery/) extension.
 
@@ -55,7 +55,7 @@ Advanced functionality is added via JavaScript user scripts (`*.uc.js`), enablin
 
 ![Sidebery Automation GIF](assets/sidebar.gif)
 
-### ⌨️ Tridactyl Integration
+### Tridactyl Integration
 
 For keyboard-driven power users, the configuration includes a custom theme and setup for the [Tridactyl](https://github.com/tridactyl/tridactyl) extension, providing a seamless Vim-like browsing experience.
 
