@@ -11,23 +11,6 @@ This is a Nix flake that provides a declarative Firefox configuration module for
 - `nix flake update` - Update flake.lock dependencies
 - `nix build` - Build the home-manager module
 
-### Formatting and Linting
-
-- `nix fmt` - Format all files using treefmt (alejandra for Nix, prettier for web files)
-- `deadnix` - Remove unused Nix code (available in dev shell)
-- `statix` - Nix static analysis and linting (available in dev shell)
-
-### Pre-commit Hooks
-
-Git hooks are automatically installed in the dev shell and will run:
-
-- Trailing whitespace trimming
-- Large file checks (excludes images: .png, .jpg, .jpeg, .svg, .gif)
-- Case conflict detection
-- Executable/shebang validation
-- Merge conflict detection
-- Private key detection
-
 ## Architecture
 
 ### Core Structure
