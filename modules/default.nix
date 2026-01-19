@@ -1,6 +1,10 @@
-{inputs, ...}: {
+{
+  self,
+  inputs,
+  ...
+}: {
   flake.homeManagerModules = rec {
-    default = builtins.import ./firefox-nixCfg.nix inputs;
+    default = import ./firefox-nixCfg.nix {inherit self inputs;};
     firefox-nixCfg = default;
   };
 }

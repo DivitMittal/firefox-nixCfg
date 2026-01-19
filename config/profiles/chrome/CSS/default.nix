@@ -1,5 +1,5 @@
 {
-  moduleInputs,
+  firefox-nixCfg,
   currentProfileDir,
   config,
   lib,
@@ -10,7 +10,7 @@
 in {
   config = mkIf cfg.enable {
     home.file."${currentProfileDir}/chrome/CSS/fx-csshacks" = {
-      source = moduleInputs.fx-csshacks;
+      source = firefox-nixCfg.inputs.fx-csshacks;
       recursive = true;
     };
 
