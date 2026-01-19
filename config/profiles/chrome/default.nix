@@ -2,7 +2,7 @@
   currentProfileDir,
   config,
   lib,
-  moduleInputs,
+  firefox-nixCfg,
   ...
 }: let
   inherit (lib) mkIf;
@@ -15,11 +15,11 @@ in {
 
   config = mkIf cfg.enable {
     home.file."${currentProfileDir}/chrome/resources" = {
-      source = moduleInputs.fx-autoconfig + "/profile/chrome/resources";
+      source = firefox-nixCfg.inputs.fx-autoconfig + "/profile/chrome/resources";
       recursive = true;
     };
     home.file."${currentProfileDir}/chrome/utils" = {
-      source = moduleInputs.fx-autoconfig + "/profile/chrome/utils";
+      source = firefox-nixCfg.inputs.fx-autoconfig + "/profile/chrome/utils";
       recursive = true;
     };
   };

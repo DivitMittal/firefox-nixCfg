@@ -1,4 +1,7 @@
-moduleInputs: {
+{
+  self,
+  inputs,
+}: {
   pkgs,
   lib,
   config,
@@ -7,13 +10,13 @@ moduleInputs: {
   inherit (lib) mkIf;
   cfg = config.programs.firefox-nixCfg;
   inherit (pkgs.stdenvNoCC.hostPlatform) isDarwin;
-  configJS = moduleInputs.fx-autoconfig + "/program/config.js";
-  defaultsDir = moduleInputs.fx-autoconfig + "/program/defaults";
-  darwinPkgs = pkgs.extend (self: super: (moduleInputs.nixpkgs-firefox-darwin.overlay self super));
+  configJS = inputs.fx-autoconfig + "/program/config.js";
+  defaultsDir = inputs.fx-autoconfig + "/program/defaults";
+  darwinPkgs = pkgs.extend (self: super: (inputs.nixpkgs-firefox-darwin.overlay self super));
 in {
   imports = [
     ../config
-    moduleInputs.betterfox-nix.modules.homeManager.betterfox
+    inputs.betterfox-nix.modules.homeManager.betterfox
   ];
   options = let
     inherit (lib) mkEnableOption mkOption types;
@@ -44,7 +47,7 @@ in {
 
   config = mkIf cfg.enable {
     _module.args = {
-      inherit moduleInputs;
+      firefox-nixCfg = self;
     };
     programs.firefox = {
       enable = true;
