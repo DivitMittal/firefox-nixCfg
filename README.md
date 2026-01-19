@@ -105,3 +105,7 @@ Then, enable it in your `home.nix`:
 ```
 
 **macOS Support:** For macOS, this module defaults to using a pre-built Firefox binary from the [nixpkgs-firefox-darwin](https://github.com/bandithedoge/nixpkgs-firefox-darwin) overlay, ensuring a native and optimized experience.
+
+## Related Repositories
+
+- [DivitMittal/OS-nixCfg](https://github.com/DivitMittal/OS-nixCfg): Main Nix configurations repository
