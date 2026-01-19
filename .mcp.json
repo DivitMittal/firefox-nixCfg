@@ -12,14 +12,12 @@
         "claude-code",
         "--project",
         "~/Projects/Cfgs/firefox-nixCfg/"
-      ],
-      "env": {}
+      ]
     },
     "nixos": {
       "type": "stdio",
       "command": "uvx",
-      "args": ["mcp-nixos"],
-      "env": {}
+      "args": ["mcp-nixos"]
     }
   }
 }
