@@ -1,7 +1,8 @@
 {
-  pkgs,
   config,
   lib,
+  firefox-nixCfg,
+  pkgs,
   ...
 }: let
   cfg = config.programs.firefox-nixCfg;
@@ -10,7 +11,7 @@ in {
   config = mkIf cfg.enable (let
     inherit (cfg) enableTridactyl;
   in {
-    programs.firefox.nativeMessagingHosts = mkIf enableTridactyl [pkgs.tridactyl-native];
+    programs.firefox.nativeMessagingHosts = mkIf enableTridactyl [firefox-nixCfg.inputs.nixpkgs-stable.legacyPackages.${pkgs.stdenvNoCC.hostPlatform.system}.tridactyl-native];
 
     xdg.configFile."tridactyl" = {
       enable = enableTridactyl;
