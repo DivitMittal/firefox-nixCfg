@@ -39,8 +39,8 @@
 
       search = {
         force = true;
-        default = "Unduck";
-        privateDefault = "Unduck";
+        default = "google";
+        privateDefault = "google";
 
         engines = {
           "bing".metaData.hidden = true;
@@ -186,29 +186,11 @@
             ];
             definedAliases = ["@hm"];
           };
-
-          "Ultimate Guitar" = {
-            urls = [
-              {
-                template = "https://www.ultimate-guitar.com/search.php";
-                params = [
-                  {
-                    name = "search_type";
-                    value = "title";
-                  }
-                  {
-                    name = "value";
-                    value = "{searchTerms}";
-                  }
-                ];
-              }
-            ];
-            definedAliases = ["@ug"];
-          };
         };
       };
 
       settings = {
+        ## disables the user-facing override toggle, keeping the traditional URL bar.
         "browser.urlbar.scotchBonnet.enableOverride" = false;
       };
       userContent = lib.strings.readFile ./chrome/userContent.css;
