@@ -1,3 +1,0 @@
-{customLib, ...}: {
-  imports = customLib.scanPaths ./.;
-}
