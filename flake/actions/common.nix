@@ -1,5 +1,7 @@
 {inputs, ...}: {
-  imports = [inputs.actions-nix.flakeModules.default];
+  imports = [
+    inputs.actions-nix.flakeModules.default
+  ];
 
   _module.args = {
     common-on = rec {
@@ -9,8 +11,6 @@
           "flake.nix"
           "flake.lock"
           "flake/**"
-          "modules/**"
-          "config/**"
         ];
       };
       pull_request = push;
@@ -29,7 +29,10 @@
           persist-credentials = false;
         };
       }
-      inputs.actions-nix.lib.steps.DeterminateSystemsNixInstallerAction
+      {
+        name = "Install Nix";
+        uses = "nixbuild/nix-quick-install-action@master";
+      }
       {
         name = "Magic Nix Cache(Use GitHub Actions Cache)";
         uses = "DeterminateSystems/magic-nix-cache-action@main";
