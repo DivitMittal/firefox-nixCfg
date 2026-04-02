@@ -8,7 +8,7 @@
       systems = import inputs.systems;
       imports = [
         (inputs.import-tree ./flake)
-        ./modules/homeManagerModules.nix
+        ./modules
       ];
     });
 
