@@ -1,3 +1,4 @@
 {
-  "enabledMcpjsonServers": ["serena", "nixos"]
+  "enabledMcpjsonServers": ["serena", "nixos"],
+  "enableAllProjectMcpServers": true
 }
