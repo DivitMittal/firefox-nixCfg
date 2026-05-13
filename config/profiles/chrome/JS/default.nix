@@ -12,7 +12,7 @@
   # To get the hash: nix store prefetch-file --hash-type sha256 <url>
   dlLibrescoreBundle = pkgs.fetchurl {
     url = "https://github.com/LibreScore/dl-librescore/releases/latest/download/dl-librescore.user.js";
-    hash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+    hash = "sha256-/19JemZRWiAfgiwwna92ptqnjHArxzAO8dxWnBTovmo=";
   };
 in {
   config = mkIf cfg.enable {
