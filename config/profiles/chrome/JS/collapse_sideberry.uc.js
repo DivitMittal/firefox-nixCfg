@@ -61,20 +61,22 @@ if (sidebarBox) {
     "Sidebar box not found on initial load, setting up MutationObserver",
   );
   // Use MutationObserver to watch for sidebar dynamically added
-  const observer = new MutationObserver((mutationsList, observer) => {
-    for (let mutation of mutationsList) {
-      if (mutation.type === "childList") {
-        sidebarBox = document.querySelector(
-          '#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]',
-        );
-        if (sidebarBox) {
-          console.log("Sidebar box found by MutationObserver");
-          handleSidebar(sidebarBox);
-          observer.disconnect(); // Stop observing once the element is found
-          break;
-        }
-      }
+  // #sidebar-box always exists; Sideberry activation changes its sidebarcommand
+  // *attribute*, not the child list — so we must observe attributes too.
+  const observer = new MutationObserver((_mutations, observer) => {
+    sidebarBox = document.querySelector(
+      '#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]',
+    );
+    if (sidebarBox) {
+      console.log("Sidebar box found by MutationObserver");
+      handleSidebar(sidebarBox);
+      observer.disconnect();
     }
   });
-  observer.observe(document.body, { childList: true, subtree: true });
+  observer.observe(document.documentElement, {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    attributeFilter: ['sidebarcommand'],
+  });
 }
