@@ -254,9 +254,11 @@
   // ── Page detection ─────────────────────────────────────────────────────────
 
   function onDocLoad(doc) {
-    if (!doc?.location?.href?.match(/github\.com\/[^/?#]+\/[^/?#]+\/pull\/\d+/)) return;
+    // Register Turbo/pjax listeners on any GitHub page, not just PR pages.
+    // If we only attach them on the initial PR-page load, navigating TO a PR
+    // via GitHub's soft navigation never triggers reinject.
+    if (!doc?.location?.href?.includes('github.com')) return;
     injectPanel(doc);
-    // GitHub uses Turbo (and legacy pjax) for soft navigation — no DOMContentLoaded fires
     doc.addEventListener('turbo:load',   () => reinject(doc));
     doc.addEventListener('turbo:render', () => reinject(doc));
     doc.addEventListener('pjax:end',     () => reinject(doc));
