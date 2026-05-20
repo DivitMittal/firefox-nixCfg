@@ -104,7 +104,9 @@
 
     sandbox.GM = makeGM(win);
     // unsafeWindow: script uses this to read window.UGAPP
-    sandbox.unsafeWindow = win.wrappedJSObject ?? win;
+    // Cu.waiveXrays gives the unwrapped content window so the bundle can
+    // read content-script-set properties (e.g. window.UGAPP).
+    sandbox.unsafeWindow = Cu.waiveXrays(win);
 
     try {
       Cu.evalInSandbox(scriptContent, sandbox, 'latest', 'dl-librescore.user.js', 1);
@@ -113,14 +115,17 @@
     }
   }
 
-  // ── Page detection (document-start equivalent) ────────────────────────────
+  // ── Page detection ─────────────────────────────────────────────────────────
+  // content-document-global-created fires in the content process under Fission,
+  // so parent-process (uc.js) observers never receive it.  gBrowser's
+  // DOMContentLoaded with capture is the correct parent-process hook.
 
-  Services.obs.addObserver((subject) => {
-    const win = subject;
-    // Only top-level musescore.com pages; skip iframes/subframes
-    if (win.top !== win) return;
-    if (!/^https:\/\/(s\.)?musescore\.com\/.+\/.+/.test(win.location?.href ?? '')) return;
+  gBrowser.addEventListener('DOMContentLoaded', (e) => {
+    const doc = e.originalTarget ?? e.target;
+    const win = doc?.defaultView;
+    if (!win || win.top !== win) return;
+    if (!/^https:\/\/(s\.)?musescore\.com\/.+\/.+/.test(doc.location?.href ?? '')) return;
     inject(win);
-  }, 'content-document-global-created', false);
+  }, true);
 
 })();
