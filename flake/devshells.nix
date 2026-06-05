@@ -26,9 +26,35 @@
             nixd
             alejandra
             prettier
+            ### Updaters
+            nvfetcher
             ;
         };
       };
+
+      commands = [
+        {
+          name = "pkgs-update";
+          help = "Update custom package sources (pkgs/_sources/) via nvfetcher";
+          command = ''
+            set -euo pipefail
+            TOKEN=$(gh auth token 2>/dev/null || true)
+            if [ -n "$TOKEN" ]; then
+              KEYFILE=$(mktemp /tmp/nvfetcher-keys.XXXXXX.toml)
+              printf '[keyfile]\ngithub = "%s"\n' "$TOKEN" > "$KEYFILE"
+              nix run nixpkgs#nvfetcher -- build \
+                -c "$PRJ_ROOT/pkgs/nvfetcher.toml" \
+                -o "$PRJ_ROOT/pkgs/_sources" \
+                --keyfile "$KEYFILE"
+              rm -f "$KEYFILE"
+            else
+              nix run nixpkgs#nvfetcher -- build \
+                -c "$PRJ_ROOT/pkgs/nvfetcher.toml" \
+                -o "$PRJ_ROOT/pkgs/_sources"
+            fi
+          '';
+        }
+      ];
     };
   };
 }
