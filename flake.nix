@@ -9,6 +9,7 @@
       imports = [
         (inputs.import-tree ./flake)
         ./modules
+        ./pkgs
       ];
     });
 

@@ -1,0 +1,5 @@
+[webhid-for-firefox]
+src.git = "https://github.com/Sainan/WebHID-for-Firefox"
+src.branch = "master"
+fetch.github = "Sainan/WebHID-for-Firefox"
+fetch.submodules = true
