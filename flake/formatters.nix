@@ -6,6 +6,7 @@
     settings.global = {
       excludes = [
         ".github/*"
+        "pkgs/_sources/*"
       ];
     };
 
