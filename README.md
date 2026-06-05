@@ -25,6 +25,19 @@
 
 ---
 
+## Table of Contents
+
+- [Features](#features)
+  - [Performance & Security (Betterfox)](#performance--security-betterfox)
+  - [UI/UX & CSS Hacks](#uiux--css-hacks)
+  - [Automation](#automation)
+  - [Sidebery Integration](#sidebery-integration)
+  - [Tridactyl Integration](#tridactyl-integration)
+- [Flakes Usage](#flakes-usage)
+- [Related Repositories](#related-repositories)
+
+---
+
 This Nix flake-based configuration provides a highly customized and declarative Firefox configuration, managed through a [home-manager](https://github.com/nix-community/home-manager) module. It focuses on delivering a superior browsing experience by integrating performance enhancements, UI/UX improvements, and automation scripts.
 
 ## Features
