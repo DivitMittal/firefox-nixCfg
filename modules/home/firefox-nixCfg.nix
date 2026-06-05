@@ -45,17 +45,22 @@ in {
     };
   };
 
-  config = mkIf cfg.enable {
-    _module.args = {
-      firefox-nixCfg = self;
-    };
-    programs.firefox = {
-      enable = true;
-      package =
-        if isDarwin
-        then null # added via home.packages, as this causes build issues
-        else cfg.package;
-    };
-    home.packages = mkIf isDarwin [cfg.package];
-  };
+  config = mkIf cfg.enable (lib.mkMerge [
+    {
+      _module.args = {
+        firefox-nixCfg = self;
+      };
+      programs.firefox = {
+        enable = true;
+        package =
+          if isDarwin
+          then null # added via home.packages, as this causes build issues
+          else cfg.package;
+      };
+      home.packages = mkIf isDarwin [cfg.package];
+    }
+    (lib.mkIf (lib.hasAttr "stylix" config) {
+      stylix.targets.firefox.profileNames = ["custom-default"];
+    })
+  ]);
 }
