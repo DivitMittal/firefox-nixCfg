@@ -9,6 +9,11 @@ result-*
 ## git pre-commit hooks (handled via cachix/git-hooks)
 .pre-commit-config.yaml
 
-## Tools
+## APM — generated; do not edit directly
+apm_modules/
+.mcp.json
+.opencode
+.claude
+.codex
+## Agent Tools
 .serena*
-*local.json
