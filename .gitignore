@@ -11,9 +11,10 @@ result-*
 
 ## APM — generated; do not edit directly
 apm_modules/
+.claude/
+.codex/
 .mcp.json
-.opencode
-.claude
-.codex
+opencode.json
+
 ## Agent Tools
-.serena*
+.serena/
