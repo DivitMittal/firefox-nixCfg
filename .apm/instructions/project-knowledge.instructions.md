@@ -1,3 +1,8 @@
+---
+description: Project knowledge for declarative Firefox home-manager module with Betterfox, CSS hacks, and fx-autoconfig
+applyTo: "**"
+---
+
 ## Project Overview
 
 This is a Nix flake that provides a declarative Firefox configuration module for home-manager. It creates a highly customized Firefox setup with performance enhancements (Betterfox), UI customizations (CSS hacks), and automation scripts (fx-autoconfig).
