@@ -1,0 +1,32 @@
+lockfile_version: '1'
+generated_at: '2026-06-12T20:37:46.144740+00:00'
+dependencies: []
+mcp_servers:
+- nixos
+- serena
+mcp_configs:
+  nixos:
+    name: nixos
+    transport: stdio
+    args:
+    - mcp-nixos
+    registry: false
+    command: uvx
+  serena:
+    name: serena
+    transport: stdio
+    args:
+    - --from
+    - git+https://github.com/oraios/serena
+    - serena
+    - start-mcp-server
+    - --context
+    - claude-code
+    - --project
+    - ~/Projects/Cfgs/firefox-nixCfg/
+    registry: false
+    command: uvx
+local_deployed_files:
+- .claude/rules/project-knowledge.md
+local_deployed_file_hashes:
+  .claude/rules/project-knowledge.md: sha256:5540b99b2ab2d5948847516179d953e9bbe47d6d8a49879895d379240d7db35f
