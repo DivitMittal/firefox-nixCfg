@@ -1,6 +1,6 @@
 ---
 description: Project knowledge for declarative Firefox home-manager module with Betterfox, CSS hacks, and fx-autoconfig
-applyTo: "**"
+applyTo: "*"
 ---
 
 ## Project Overview

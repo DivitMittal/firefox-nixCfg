@@ -48,7 +48,7 @@ The configuration incorporates hardened user preferences from [Betterfox](https:
 
 ### UI/UX & CSS Hacks
 
-The user interface is heavily customized to be minimal, clean, & efficient, largely based on styles from [MrOtherGuy/firefox-csshacks](https.github.com/MrOtherGuy/firefox-csshacks).
+The user interface is heavily customized to be minimal, clean, & efficient, largely based on styles from [MrOtherGuy/firefox-csshacks](https://github.com/MrOtherGuy/firefox-csshacks).
 
 - **Minimalist Design:** The tab bar is hidden, and the URL bar is streamlined for a distraction-free look.
 - **Custom Styles:** Additional CSS tweaks are applied to refine margins and element spacing for a polished feel.
@@ -76,25 +76,22 @@ For keyboard-driven power users, the configuration includes a custom theme and s
 
 ## Flakes Usage
 
-To use this module in your own configuration, add it to your `flake.nix` inputs:
+Add the flake input and import `homeManagerConfigurations.default` directly into your home-manager modules list. The module is automatically imported — no extra wiring needed:
 
 ```nix
 ## flake.nix
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     home-manager.url = "github:nix-community/home-manager";
     firefox-nixCfg.url = "github:DivitMittal/firefox-nixCfg";
   };
 
-  outputs = { self, nixpkgs, home-manager, firefox-nixCfg, ... }: {
+  outputs = { nixpkgs, home-manager, firefox-nixCfg, ... }: {
     homeConfigurations.your-user = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux; # Or your system
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
       modules = [
-        ## Import the module
-        firefox-nixCfg.homeManagerModules.default
-
-        ## Your other modules
+        firefox-nixCfg.homeManagerConfigurations.default
         ./home.nix
       ];
     };
@@ -102,17 +99,14 @@ To use this module in your own configuration, add it to your `flake.nix` inputs:
 }
 ```
 
-Then, enable it in your `home.nix`:
+Then configure the available options in your `home.nix`:
 
 ```nix
 ## home.nix
 {
   programs.firefox-nixCfg = {
-    enable = true;
-    ## Optionally enable Tridactyl support
-    enableTridactyl = true;
-    ## Optionally specify a custom Firefox package
-    package = pkgs.firefox-bin;
+    enableTridactyl = true;     # optional — enables Tridactyl vim keybindings
+    package = pkgs.firefox-bin; # optional — override the Firefox package
   };
 }
 ```
@@ -121,4 +115,4 @@ Then, enable it in your `home.nix`:
 
 ## Related Repositories
 
-- [DivitMittal/OS-nixCfg](https://github.com/DivitMittal/OS-nixCfg): Main Nix configurations repository
+- [DivitMittal/OS-nixCfg](https://github.com/DivitMittal/OS-nixCfg): Infrastructure NixOS/nix-darwin configurations repository
