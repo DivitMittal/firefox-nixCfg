@@ -13,6 +13,7 @@ result-*
 apm_modules/
 .claude/
 .codex/
+.opencode/
 .mcp.json
 opencode.json
 
