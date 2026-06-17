@@ -16,6 +16,9 @@ apm_modules/
 .opencode/
 .mcp.json
 opencode.json
+AGENTS.md
+CLAUDE.md
+GEMINI.md
 
 ## Agent Tools
 .serena/
