@@ -28,6 +28,8 @@
             prettier
             ### Updaters
             nvfetcher
+            ## AI context
+            apm-cli
             ;
         };
       };
