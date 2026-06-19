@@ -1,7 +1,6 @@
-_: {
-  imports = [
-    ./tridactyl
-    ./profiles
-    ./policies.nix
-  ];
+{self, ...}: {
+  flake.homeManagerConfigurations = rec {
+    Cfg = import ./setup.nix self;
+    default = Cfg;
+  };
 }

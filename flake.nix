@@ -10,6 +10,7 @@
         (inputs.import-tree ./flake)
         ./modules
         ./pkgs
+        ./config
       ];
     });
 
