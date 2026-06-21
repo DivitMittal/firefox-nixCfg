@@ -3,7 +3,7 @@ version: 1.0.0
 description: Declarative Firefox configuration home-manager module with Betterfox, CSS hacks, and fx-autoconfig
 author: DivitMittal
 license: MIT
-targets:
+target:
   - claude
   - codex
   - opencode

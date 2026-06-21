@@ -27,6 +27,14 @@ mcp_configs:
     registry: false
     command: uvx
 local_deployed_files:
+- .claude/rules/config-context.md
+- .claude/rules/flake-context.md
+- .claude/rules/modules-context.md
+- .claude/rules/pkgs-context.md
 - .claude/rules/project-knowledge.md
 local_deployed_file_hashes:
-  .claude/rules/project-knowledge.md: sha256:5540b99b2ab2d5948847516179d953e9bbe47d6d8a49879895d379240d7db35f
+  .claude/rules/config-context.md: sha256:2c56632b925e9782b004e29032cbe26eda9e844667fa9c0ded4dd256a21fe7b6
+  .claude/rules/flake-context.md: sha256:92587c9dcf50b37e60003927ffb848840c331aeb979cc4ce523652a23455294e
+  .claude/rules/modules-context.md: sha256:d8bc4daf4935ffda43ea1b128650f8804e2b6afcbb8ce3968b27a5b89e440c99
+  .claude/rules/pkgs-context.md: sha256:2795ddd85ab4337ae3af44013ca59689663aef7ba556f90393f4db34a79e71c3
+  .claude/rules/project-knowledge.md: sha256:85a062465f8357dce89bb707730998e8b7f153b55e975d5cf6fa6371d4aaa0c8
