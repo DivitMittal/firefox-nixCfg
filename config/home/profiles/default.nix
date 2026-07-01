@@ -111,10 +111,16 @@
             definedAliases = ["@ud"];
           };
 
-          "Perplexity" = {
+          # AI assistant search engines. The ?q= deep-link mechanism mirrors
+          # how wisprflow.ai wires these services, so typing in the URL bar
+          # opens a fresh chat pre-filled with the search terms. ChatGPT uses
+          # its canonical chatgpt.com domain (chat.openai.com redirects here).
+          # Icons are Simple Icons (CC0) brand marks vendored under ./icons so
+          # they resolve to local store paths with no runtime network fetch.
+          "ChatGPT" = {
             urls = [
               {
-                template = "https://www.perplexity.ai";
+                template = "https://chatgpt.com/";
                 params = [
                   {
                     name = "q";
@@ -123,6 +129,39 @@
                 ];
               }
             ];
+            icon = "${./icons/chatgpt.svg}";
+            definedAliases = ["@cg"];
+          };
+
+          "Claude" = {
+            urls = [
+              {
+                template = "https://claude.ai/new";
+                params = [
+                  {
+                    name = "q";
+                    value = "{searchTerms}";
+                  }
+                ];
+              }
+            ];
+            icon = "${./icons/claude.svg}";
+            definedAliases = ["@cl"];
+          };
+
+          "Perplexity" = {
+            urls = [
+              {
+                template = "https://www.perplexity.ai/search/new";
+                params = [
+                  {
+                    name = "q";
+                    value = "{searchTerms}";
+                  }
+                ];
+              }
+            ];
+            icon = "${./icons/perplexity.svg}";
             definedAliases = ["@p"];
           };
 
