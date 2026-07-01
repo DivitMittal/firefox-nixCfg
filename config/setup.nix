@@ -1,8 +1,4 @@
 self: {
-  imports = [
-    (self.inputs.import-tree ./home)
-    self.homeManagerModules.default
-  ];
-  _module.args.firefox-nixCfg = self;
+  imports = [self.homeManagerModules.default];
   programs.firefox-nixCfg.enable = true;
 }

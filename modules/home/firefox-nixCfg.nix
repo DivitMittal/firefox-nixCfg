@@ -1,23 +1,17 @@
 {
-  self,
-  inputs,
-}: {
   pkgs,
   lib,
   config,
+  ffcfgInputs,
   ...
 }: let
   inherit (lib) mkIf;
   cfg = config.programs.firefox-nixCfg;
   inherit (pkgs.stdenvNoCC.hostPlatform) isDarwin;
-  configJS = inputs.fx-autoconfig + "/program/config.js";
-  defaultsDir = inputs.fx-autoconfig + "/program/defaults";
-  darwinPkgs = pkgs.extend (self: super: (inputs.nixpkgs-firefox-darwin.overlay self super));
+  configJS = ffcfgInputs.fx-autoconfig + "/program/config.js";
+  defaultsDir = ffcfgInputs.fx-autoconfig + "/program/defaults";
+  darwinPkgs = pkgs.extend (final: prev: (ffcfgInputs.nixpkgs-firefox-darwin.overlay final prev));
 in {
-  imports = [
-    (self + "/config")
-    inputs.betterfox-nix.modules.homeManager.betterfox
-  ];
   options = let
     inherit (lib) mkEnableOption mkOption types;
     inherit (pkgs.stdenvNoCC.hostPlatform) isDarwin;
@@ -45,22 +39,14 @@ in {
     };
   };
 
-  config = mkIf cfg.enable (lib.mkMerge [
-    {
-      _module.args = {
-        firefox-nixCfg = self;
-      };
-      programs.firefox = {
-        enable = true;
-        package =
-          if isDarwin
-          then null # added via home.packages, as this causes build issues
-          else cfg.package;
-      };
-      home.packages = mkIf isDarwin [cfg.package];
-    }
-    (lib.mkIf (lib.hasAttr "stylix" config) {
-      stylix.targets.firefox.profileNames = ["custom-default"];
-    })
-  ]);
+  config = mkIf cfg.enable {
+    programs.firefox = {
+      enable = true;
+      package =
+        if isDarwin
+        then null # added via home.packages, as this causes build issues
+        else cfg.package;
+    };
+    home.packages = mkIf isDarwin [cfg.package];
+  };
 }
