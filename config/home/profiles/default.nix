@@ -1,22 +1,20 @@
 {
-  pkgs,
   config,
   lib,
+  pkgs,
   ...
 }: let
-  profilesDir =
-    config.programs.firefox.configPath
-    + lib.strings.optionalString pkgs.stdenvNoCC.hostPlatform.isDarwin "/Profiles";
-  currentProfileDir = "${profilesDir}/custom-default";
+  profileName = "custom-default";
   profiles = {
     clean-profile = {
       id = 0;
       isDefault = false;
     };
 
-    custom-default = {
+    ${profileName} = {
       id = 1;
       isDefault = true;
+      path = profileName;
 
       bookmarks = {
         force = true;
@@ -198,6 +196,7 @@
     };
   };
   cfg = config.programs.firefox-nixCfg;
+  currentProfileDir = "${config.programs.firefox.profilesPath}/${config.programs.firefox.profiles.${profileName}.path}";
   inherit (lib) mkIf;
 in {
   imports = [./chrome];
@@ -208,7 +207,7 @@ in {
     programs.firefox = {
       betterfox = {
         enable = true;
-        profiles.custom-default.enableAllSections = true;
+        profiles.${profileName}.enableAllSections = true;
       };
       inherit profiles;
     };
