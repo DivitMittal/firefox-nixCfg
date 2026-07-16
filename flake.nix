@@ -50,12 +50,12 @@
     ## Firefox
     betterfox-nix = {
       url = "github:heitoraugustoln/betterfox-nix";
-      inputs.nixpkgs.follows = "nixpkgs-2605";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs-firefox-darwin = {
       url = "github:bandithedoge/nixpkgs-firefox-darwin";
       #url = "path:/Users/div/Projects/Forks/nixpkgs-firefox-darwin";
-      inputs.nixpkgs.follows = "nixpkgs-2605";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     fx-autoconfig = {
       url = "github:MrOtherGuy/fx-autoconfig";

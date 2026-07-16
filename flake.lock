@@ -31,7 +31,7 @@
         "flake-parts": "flake-parts",
         "import-tree": "import-tree",
         "nixpkgs": [
-          "nixpkgs-2605"
+          "nixpkgs"
         ],
         "systems": "systems"
       },
@@ -242,7 +242,7 @@
     "nixpkgs-firefox-darwin": {
       "inputs": {
         "nixpkgs": [
-          "nixpkgs-2605"
+          "nixpkgs"
         ]
       },
       "locked": {
