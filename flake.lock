@@ -9,7 +9,7 @@
           "git-hooks"
         ],
         "nixpkgs": [
-          "nixpkgs"
+          "nixpkgs-2605"
         ]
       },
       "locked": {
@@ -31,7 +31,7 @@
         "flake-parts": "flake-parts",
         "import-tree": "import-tree",
         "nixpkgs": [
-          "nixpkgs"
+          "nixpkgs-2605"
         ],
         "systems": "systems"
       },
@@ -52,7 +52,7 @@
     "devshell": {
       "inputs": {
         "nixpkgs": [
-          "nixpkgs"
+          "nixpkgs-2605"
         ]
       },
       "locked": {
@@ -160,7 +160,7 @@
       "inputs": {
         "flake-compat": "flake-compat",
         "nixpkgs": [
-          "nixpkgs"
+          "nixpkgs-2605"
         ]
       },
       "locked": {
@@ -223,10 +223,26 @@
         "type": "github"
       }
     },
+    "nixpkgs-2605": {
+      "locked": {
+        "lastModified": 1784182977,
+        "narHash": "sha256-Hy8zg2HEcsk4WqowQK3UKRXz1fdQM7Z2un3nSyLbJaQ=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "29c22b7761070f37c4c2b0dd6a8777f0bd43e268",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-26.05-darwin",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-firefox-darwin": {
       "inputs": {
         "nixpkgs": [
-          "nixpkgs"
+          "nixpkgs-2605"
         ]
       },
       "locked": {
@@ -258,22 +274,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-stable": {
-      "locked": {
-        "lastModified": 1782847189,
-        "narHash": "sha256-twXPFqFsrrY5r28Zh7Homgcp2gUMBgQ6WDS98Q/3xFI=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "b6018f87da91d19d0ab4cf979885689b469cdd41",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-25.11",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "actions-nix": "actions-nix",
@@ -285,8 +285,8 @@
         "git-hooks": "git-hooks",
         "import-tree": "import-tree_2",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-2605": "nixpkgs-2605",
         "nixpkgs-firefox-darwin": "nixpkgs-firefox-darwin",
-        "nixpkgs-stable": "nixpkgs-stable",
         "systems": "systems_2",
         "treefmt-nix": "treefmt-nix"
       }
@@ -324,7 +324,7 @@
     "treefmt-nix": {
       "inputs": {
         "nixpkgs": [
-          "nixpkgs"
+          "nixpkgs-2605"
         ]
       },
       "locked": {
