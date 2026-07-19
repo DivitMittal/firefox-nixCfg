@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "OS-nixCfg": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1784369634,
+        "narHash": "sha256-8S5FZ7zhFh4/Qt/5WKz+M40FtrqxdVBiN+IvxxNkbF8=",
+        "owner": "DivitMittal",
+        "repo": "OS-nixCfg",
+        "rev": "7197410dd5050f6c04de52150442c9febe7ca36b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "DivitMittal",
+        "repo": "OS-nixCfg",
+        "type": "github"
+      }
+    },
     "actions-nix": {
       "inputs": {
         "flake-parts": [
@@ -276,6 +292,7 @@
     },
     "root": {
       "inputs": {
+        "OS-nixCfg": "OS-nixCfg",
         "actions-nix": "actions-nix",
         "betterfox-nix": "betterfox-nix",
         "devshell": "devshell",

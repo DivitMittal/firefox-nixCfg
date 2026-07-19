@@ -65,5 +65,9 @@
       url = "github:MrOtherGuy/firefox-csshacks";
       flake = false;
     };
+    OS-nixCfg = {
+      url = "github:DivitMittal/OS-nixCfg";
+      flake = false;
+    };
   };
 }
