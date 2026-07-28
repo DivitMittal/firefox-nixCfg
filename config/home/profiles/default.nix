@@ -165,6 +165,25 @@
             definedAliases = ["@p"];
           };
 
+          # Gemini uses ?prompt= via an external extension that injects the
+          # query into the prompt editor, so the URL stays at the bare host
+          # (no /app path component).
+          "Gemini" = {
+            urls = [
+              {
+                template = "https://gemini.google.com";
+                params = [
+                  {
+                    name = "prompt";
+                    value = "{searchTerms}";
+                  }
+                ];
+              }
+            ];
+            icon = "${./icons/gemini.svg}";
+            definedAliases = ["@ge"];
+          };
+
           # Nix-related search engines
           "Nix Packages" = {
             urls = [
