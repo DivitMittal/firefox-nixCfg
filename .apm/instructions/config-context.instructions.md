@@ -12,6 +12,7 @@ applyTo: "config/**"
 ### `config/profiles/chrome/CSS/`
 
 Contains userChrome.css customizations sourced from **fx-csshacks**. Current state:
+
 - The tab bar is hidden.
 - The URL bar is streamlined.
 

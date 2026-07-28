@@ -46,7 +46,7 @@ config/              # Firefox configuration components
 - **flake-parts**: Modular flake structure
 - **betterfox-nix**: Performance and privacy user.js generation
 - **nixpkgs-firefox-darwin**: macOS Firefox binary support
-- **fx-autoconfig**: Enables custom userChrome.css and *.uc.js loading
+- **fx-autoconfig**: Enables custom userChrome.css and \*.uc.js loading
 - **fx-csshacks**: UI customization CSS collection
 
 ### Module Architecture
@@ -66,7 +66,7 @@ Platform-specific handling:
 
 - **Betterfox**: Imported as home-manager module for user.js generation
 - **CSS Customization**: Located in `config/profiles/chrome/CSS/` for userChrome.css
-- **JavaScript Automation**: Located in `config/profiles/chrome/JS/` for *.uc.js files
+- **JavaScript Automation**: Located in `config/profiles/chrome/JS/` for \*.uc.js files
 - **Tridactyl**: Separate configuration module in `config/tridactyl/`
 
 ## Development Guidelines

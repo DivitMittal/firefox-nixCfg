@@ -9,11 +9,11 @@ applyTo: "modules/**"
 
 ## Exposed Options
 
-| Option | Type | Purpose |
-|---|---|---|
-| `programs.firefox-nixCfg.enable` | bool | Master toggle |
-| `programs.firefox-nixCfg.package` | package | Override the Firefox package |
-| `programs.firefox-nixCfg.enableTridactyl` | bool | Gate Tridactyl extension wiring |
+| Option                                    | Type    | Purpose                         |
+| ----------------------------------------- | ------- | ------------------------------- |
+| `programs.firefox-nixCfg.enable`          | bool    | Master toggle                   |
+| `programs.firefox-nixCfg.package`         | package | Override the Firefox package    |
+| `programs.firefox-nixCfg.enableTridactyl` | bool    | Gate Tridactyl extension wiring |
 
 ## Platform Split
 

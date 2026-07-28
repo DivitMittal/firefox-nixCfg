@@ -77,6 +77,6 @@ if (sidebarBox) {
     childList: true,
     subtree: true,
     attributes: true,
-    attributeFilter: ['sidebarcommand'],
+    attributeFilter: ["sidebarcommand"],
   });
 }

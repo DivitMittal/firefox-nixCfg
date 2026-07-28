@@ -1,4 +1,8 @@
-{inputs, self, ...}: {
+{
+  inputs,
+  self,
+  ...
+}: {
   flake.homeManagerModules = {
     ## Default import for all modules
     default = {

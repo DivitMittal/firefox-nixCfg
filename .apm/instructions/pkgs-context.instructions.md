@@ -12,6 +12,7 @@ applyTo: "pkgs/**"
 ### `pkgs/custom/webhid-for-firefox/`
 
 A custom package that patches Firefox to expose WebHID support. When modifying:
+
 - Update the derivation in this directory only.
 - Ensure the package attribute name in `pkgs/default.nix` remains stable — the module references it by name.
 - Test with `nix build .#webhid-for-firefox` before committing.
@@ -21,6 +22,7 @@ A custom package that patches Firefox to expose WebHID support. When modifying:
 Generated entirely by **nvfetcher**. The files here record fetched source hashes and metadata.
 
 **Never edit `pkgs/_sources/` manually.** To update sources:
+
 1. Enter the devshell: `nix develop`
 2. Run the `pkgs-update` command (wraps `nvfetcher run`).
 3. Commit the resulting diff in `pkgs/_sources/` as a separate atomic commit.

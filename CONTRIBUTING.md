@@ -24,6 +24,7 @@ nix develop   # enter dev shell (nixd, alejandra, prettier)
 ## Reporting Issues
 
 Open a GitHub issue with:
+
 - Your platform (macOS/Linux) and nixpkgs channel
 - Steps to reproduce
 - Expected vs actual behavior

@@ -1,4 +1,4 @@
-{...}: {
+_: {
   perSystem = {pkgs, ...}: let
     customPkgs = import ./custom {inherit pkgs;};
   in {
