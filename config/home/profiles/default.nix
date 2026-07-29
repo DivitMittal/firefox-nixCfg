@@ -184,6 +184,24 @@
             definedAliases = ["@ge"];
           };
 
+          # Grok exposes the prompt via ?q= on the bare host, mirroring the
+          # ChatGPT/Claude/Perplexity contract natively.
+          "Grok" = {
+            urls = [
+              {
+                template = "https://grok.com/";
+                params = [
+                  {
+                    name = "q";
+                    value = "{searchTerms}";
+                  }
+                ];
+              }
+            ];
+            icon = "${./icons/grok.svg}";
+            definedAliases = ["@gr"];
+          };
+
           # Nix-related search engines
           "Nix Packages" = {
             urls = [
