@@ -23,3 +23,6 @@ GEMINI.md
 ## Agent Tools
 .serena/
 .omo/
+
+## git worktrees kept inside the project directory
+.worktrees/
