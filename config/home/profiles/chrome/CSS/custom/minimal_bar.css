@@ -25,6 +25,8 @@
   display: none;
 }
 
+/* Added by sidebar.revamp; Sideberry is toggled by the collapse script instead */
+#sidebar-button,
 #urlbar-go-button,
 #star-button,
 #star-button-box,
