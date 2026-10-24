@@ -1,17 +1,23 @@
 {
-  "webhid-for-firefox": {
-    "cargoLock": null,
-    "date": null,
-    "extract": null,
-    "name": "webhid-for-firefox",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "sha256": "sha256-7VYyXj1klLTjL5XFkIKcyq6eQttJAmUI8rMyeZfwimo=",
-      "submodules": true,
-      "type": "github",
-      "url": "https://github.com/Sainan/WebHID-for-Firefox/archive/b4b386631daab468b5bb57e2672c3c22a06ade66.tar.gz"
-    },
-    "version": "b4b386631daab468b5bb57e2672c3c22a06ade66"
-  }
+    "webhid-for-firefox": {
+        "cargoLock": null,
+        "date": "2026-08-28",
+        "extract": null,
+        "name": "webhid-for-firefox",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": true,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "Sainan",
+            "repo": "WebHID-for-Firefox",
+            "rev": "cb243f2ed8cd1f9f01aece85ff39aa3645d3a3b9",
+            "sha256": "sha256-ogezN5fa0AYi+ZCjrEuiq3/YyFtzi7yv6G0wrRxxLKA=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "cb243f2ed8cd1f9f01aece85ff39aa3645d3a3b9"
+    }
 }
