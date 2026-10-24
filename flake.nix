@@ -52,7 +52,10 @@
     ## Firefox
     betterfox-nix = {
       url = "github:heitoraugustoln/betterfox-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        systems.follows = "systems";
+      };
     };
     nixpkgs-firefox-darwin = {
       url = "github:bandithedoge/nixpkgs-firefox-darwin";
