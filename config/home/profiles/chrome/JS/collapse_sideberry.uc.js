@@ -11,7 +11,8 @@ const extendSidebarBox = (sidebarBox) => {
 
 const resetSidebarBox = (sidebarBox) => {
   sidebarBox.style.position = "absolute";
-  sidebarBox.style.right = "0px";
+  // Firefox's nova layout pushes the absolutely positioned box past the window edge
+  sidebarBox.style.right = "4px";
   sidebarBox.style.height = "100vh";
   sidebarBox.style.width = "35px";
   sidebarBox.style.zIndex = "5";
