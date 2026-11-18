@@ -8,14 +8,14 @@
 {
   webhid-for-firefox = {
     pname = "webhid-for-firefox";
-    version = "cb243f2ed8cd1f9f01aece85ff39aa3645d3a3b9";
+    version = "e169f6dabc60d25ac19f549d1eca604b7178a51b";
     src = fetchFromGitHub {
       owner = "Sainan";
       repo = "WebHID-for-Firefox";
-      rev = "cb243f2ed8cd1f9f01aece85ff39aa3645d3a3b9";
+      rev = "e169f6dabc60d25ac19f549d1eca604b7178a51b";
       fetchSubmodules = true;
-      sha256 = "sha256-ogezN5fa0AYi+ZCjrEuiq3/YyFtzi7yv6G0wrRxxLKA=";
+      sha256 = "sha256-nMg+lWL2tamaQjohSRN7V8dHQRRjw+ozrUJjDSGy0Rc=";
     };
-    date = "2026-08-28";
+    date = "2026-11-17";
   };
 }
