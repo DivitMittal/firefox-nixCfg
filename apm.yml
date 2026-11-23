@@ -2,7 +2,7 @@ name: firefox-nixcfg
 version: 1.0.0
 description: Declarative Firefox configuration home-manager module with Betterfox, CSS hacks, and fx-autoconfig
 author: DivitMittal
-license: MIT
+license: LicenseRef-HONCL-1.0
 target:
   - claude
   - codex
